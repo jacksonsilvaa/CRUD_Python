@@ -59,6 +59,9 @@ def insert_data_table(table, dataloop):
 
         print("Data entered successfully!")
     except (Exception, psycopg2.Error) as error:
+        
+        #reverses bank actions if an error is found
+        con.rollback()
 
         logging.error("Error inserting data: %s", error)
 
@@ -93,5 +96,8 @@ def read_select_table(table):
 
         print("Select success")
     except (Exception, psycopg2.Error) as error:
+
+        #reverses bank actions if an error is found
+        con.rollback()
 
         logging.error("Error select data: %s", error)
