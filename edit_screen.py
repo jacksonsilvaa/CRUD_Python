@@ -14,6 +14,9 @@ class EditScreen(tk.Toplevel):  # Use Toplevel to create a secondary window
         self.minsize(500, 500)
         self.geometry("500x500") 
 
+
+        #personal dates
+
         self.name_label = tk.Label(self, text="Name: ")
         self.name_label.grid(column=0, row=1)
 
@@ -55,6 +58,8 @@ class EditScreen(tk.Toplevel):  # Use Toplevel to create a secondary window
 
         self.cpf_entry = tk.Entry(self)
         self.cpf_entry.grid(column=1, row=6)
+
+        #Address
 
         self.address_label = tk.Label(self, text="Address")
         self.address_label.grid(column=0, row=7)

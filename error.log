@@ -1,2 +1,15 @@
 2023-09-11 01:21:23,136 - ERROR - Error inserting data: value too long for type character varying(40)
 
+2023-09-11 02:30:56,578 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:30:57,574 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:30:57,941 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:30:58,137 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:30:58,280 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:30:58,445 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:31:41,268 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:31:42,226 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:31:42,695 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:31:42,915 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:31:43,085 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:31:43,249 - ERROR - Error select data: not all arguments converted during string formatting
+2023-09-11 02:31:43,411 - ERROR - Error select data: not all arguments converted during string formatting

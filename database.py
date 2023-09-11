@@ -77,6 +77,8 @@ def read_select_table(table):
         #execute select
         cur.execute(query)
 
+        print(query)
+
         results = cur.fetchall()
 
         message = ''
@@ -95,6 +97,7 @@ def read_select_table(table):
         return message
 
         print("Select success")
+    
     except (Exception, psycopg2.Error) as error:
 
         #reverses bank actions if an error is found
