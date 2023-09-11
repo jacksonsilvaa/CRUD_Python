@@ -1,21 +1,22 @@
 import psycopg2
-con = psycopg2.connect(host='localhost', database='db_dados_usuario',
-user='postgres', password='4b4c4t3@D')
-cur = con.cursor()
+import logging
+
+#System error register
+logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def insert_data_table(table, dataloop):
+    con = psycopg2.connect(host='localhost', database='db_dados_usuario',
+    user='postgres', password='4b4c4t3@D')
+    cur = con.cursor()
+    
 
     try:
         
-        #placeholders = ', '.join(['%s']) * len(dados)
-        #query = f'insert into {table} (phone, name) values ({placeholders})'
         
         query = f'insert into {table} (phone, name, email) values (%s,%s,%s)'
             
         #print to check the values
-
-        #print (f' first print data {dataloop}')
 
         for data in dataloop:
             #print to check the values ​​during the loop
@@ -38,14 +39,18 @@ def insert_data_table(table, dataloop):
 
         #close conection
 
-        #cur.close()
-        #con.close()
+        cur.close()
+        con.close()
 
         print("Data entered successfully!")
     except (Exception, psycopg2.Error) as error:
-        print("Error inserting data:", error)
+
+        logging.error("Error inserting data: %s", error)
 
 def read_select_table(table):
+    con = psycopg2.connect(host='localhost', database='db_dados_usuario',
+    user='postgres', password='4b4c4t3@D')
+    cur = con.cursor()
 
     try:
 
@@ -66,11 +71,12 @@ def read_select_table(table):
 
         #clone conection
 
-        #cur.close()
-        #con.close()
+        cur.close()
+        con.close()
 
         return message
 
         print("Select success")
     except (Exception, psycopg2.Error) as error:
-        print("ErrorInserting data: ", error)
+
+        logging.error("Error select data: %s", error)
