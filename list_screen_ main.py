@@ -126,28 +126,7 @@ class ListScreen(tk.Tk):
 
         self.current_screen = None
 
-    #function
-
-    ''' 
-    the functions below are not used:
-       #add empty column and row
-        self.grid_columnconfigure(3, weight=1)
-        self.grid_rowconfigure(6, weight=1)
-    
-    def open_edit_screen(self):
-        #self.withdraw()  # Esconde a tela atual
-        self.iconify() # minimizar a janela principal
-        edit_screen = EditScreen(self)  # Cria a tela de edição
-        edit_screen.mainloop()  # Inicia o loop da tela de edição quando voltar do loop, exibe a tela atual novamente
-        self.deiconify()  # Torna a tela atual visível novamente
-
-    def open_create_screen(self):
-        #self.withdraw()  # Hide the current screee
-        self.iconify() # minimizar a janela principal
-        create_screen = CreateScreen(self)  # Cria a tela de edição
-        create_screen.mainloop()  # Inicia o loop da tela de edição quando voltar do loop, exibe a tela atual novamente
-        self.deiconify()  # Torna a tela atual visível novamente'''
-    
+    #functions    
     
     
     #new functions to open other screens without necessarily closing the main one
