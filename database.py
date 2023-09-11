@@ -1,13 +1,28 @@
 import psycopg2
+import configparser
 import logging
+
+config = configparser.ConfigParser()
+config.read('config\config.ini')
+
+db_host = config['database']['host']
+db_database = config['database']['database']
+db_user = config['database']['user']
+db_password = config['database']['password']
 
 #System error register
 logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
+def connect_to_database():
+    con = psycopg2.connect(
+        host = db_host,
+        database = db_database,
+        user = db_user,
+        password = db_password)
+    return con
 
 def insert_data_table(table, dataloop):
-    con = psycopg2.connect(host='localhost', database='db_dados_usuario',
-    user='postgres', password='4b4c4t3@D')
+    con = connect_to_database()
     cur = con.cursor()
     
 
@@ -48,9 +63,9 @@ def insert_data_table(table, dataloop):
         logging.error("Error inserting data: %s", error)
 
 def read_select_table(table):
-    con = psycopg2.connect(host='localhost', database='db_dados_usuario',
-    user='postgres', password='4b4c4t3@D')
+    con = connect_to_database()
     cur = con.cursor()
+    
 
     try:
 
